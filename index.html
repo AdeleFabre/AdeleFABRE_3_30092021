@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ba5422f0b6.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,21 +19,69 @@
     <main>
 
         <div class="localisation">
-            <i class="fa-solid fa-location-dot"></i><p>Paris, Belleville</p>
+            <i class="fas fa-map-marker-alt"></i><p>Paris, Belleville</p>
         </div>
 
 
         <section class="accueil">
-
+            <div class="accueil__texte">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            </div>
+            <button class="btn btn--explo">Explorez nos restaurants</button>
         </section>
 
 
         <section class="fonctionnement">
-
+            <h2>Fonctionnement</h2>
+            <div class="fonctionnement__etape">
+                <span class="etape__nbr">1</span><i class="fas fa-mobile-alt etape__icone"></i><p>Choisissez un restaurant</p>
+            </div>
+            <div class="fonctionnement__etape">
+                <span class="etape__nbr">2</span><i class="fas fa-list-ul etape__icone"></i><p>Composez votre menu</p>
+            </div>
+            <div class="fonctionnement__etape">
+                <span class="etape__nbr">3</span><i class="fas fa-store etape__icone"></i><p>Dégustez au restaurant</p>
+            </div>
         </section>
 
 
-        <section class="Restaurants">
+        <section class="restaurants">
+            <h2>Restaurants</h2>
+            <div class="restaurants__box">
+                <a href="#" class="restau restau--palettedugout">
+                    <div class="restau__bandeau">
+                        <p class="restau__nom">La planète du goût</p>
+                        <p class="restau__quartier">Ménilmontant</p>
+                        <i class="far fa-heart"></i>
+                    </div>
+                </a>
+
+                <a href="#" class="restau restau--noteenchantee">
+                    <div class="restau__bandeau">
+                        <p class="restau__nom">La note enchantée</p>
+                        <p class="restau__quartier">Charonne</p>
+                        <i class="far fa-heart"></i>
+                    </div>
+                </a>
+
+                <a href="#" class="restau restau--alafrancaise">
+                    <div class="restau__bandeau">
+                        <p class="restau__nom">A la française</p>
+                        <p class="restau__quartier">Cité Rouge</p>
+                        <i class="far fa-heart"></i>
+                    </div>
+                </a>
+
+                <a href="#" class="restau restau--delicedessens">
+                    <div class="restau__bandeau">
+                        <p class="restau__nom">Le délice des sens</p>
+                        <p class="restau__quartier">Folie-Méricourt</p>
+                        <i class="far fa-heart"></i>
+                    </div>
+                </a>
+
+            </div>
 
         </section>
 
@@ -41,6 +90,11 @@
 
 
     <footer>
+        <p>Ohmyfood</p>
+        <i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a>
+        <i class="fas fa-hands-helping"></i><a href="#">Devenir partenaire</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Contact</a>
 
     </footer>
     
