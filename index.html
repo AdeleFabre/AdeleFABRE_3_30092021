@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ba5422f0b6.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Bienvenue sur Ohmyfood!</title>
 </head>
 <body>
 
     <header>
-        <img src="./images/logo/ohmyfood@2x.svg" alt="Ohmyfood">
+        <h1>ohmyfood</h1>
     </header>
 
 
@@ -27,7 +35,7 @@
 
         <section class="accueil">
             <div class="accueil__texte">
-                <h1>Réservez le menu qui vous convient</h1>
+                <h2>Réservez le menu qui vous convient</h2>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
             </div>
             <button class="btn btn--explo">Explorez nos restaurants</button>
@@ -53,32 +61,40 @@
             <div class="restaurants__box">
                 <a href="#" class="restau restau--palettedugout">
                     <div class="restau__bandeau">
-                        <p class="restau__nom">La planète du goût</p>
-                        <p class="restau__quartier">Ménilmontant</p>
+                        <div class="restau__texte">
+                            <p class="restau__nom">La planète du goût</p>
+                            <p class="restau__quartier">Ménilmontant</p>
+                        </div>
                         <i class="far fa-heart"></i>
                     </div>
                 </a>
 
                 <a href="#" class="restau restau--noteenchantee">
                     <div class="restau__bandeau">
-                        <p class="restau__nom">La note enchantée</p>
-                        <p class="restau__quartier">Charonne</p>
+                        <div class="restau__texte">
+                            <p class="restau__nom">La note enchantée</p>
+                            <p class="restau__quartier">Charonne</p>
+                        </div>
                         <i class="far fa-heart"></i>
                     </div>
                 </a>
 
                 <a href="#" class="restau restau--alafrancaise">
                     <div class="restau__bandeau">
-                        <p class="restau__nom">A la française</p>
-                        <p class="restau__quartier">Cité Rouge</p>
+                        <div class="restau__texte">
+                            <p class="restau__nom">A la française</p>
+                            <p class="restau__quartier">Cité Rouge</p>
+                        </div>
                         <i class="far fa-heart"></i>
                     </div>
                 </a>
 
                 <a href="#" class="restau restau--delicedessens">
                     <div class="restau__bandeau">
-                        <p class="restau__nom">Le délice des sens</p>
-                        <p class="restau__quartier">Folie-Méricourt</p>
+                        <div class="restau__texte">
+                            <p class="restau__nom">Le délice des sens</p>
+                            <p class="restau__quartier">Folie-Méricourt</p>
+                        </div>
                         <i class="far fa-heart"></i>
                     </div>
                 </a>
@@ -92,11 +108,11 @@
 
 
     <footer>
-        <p>Ohmyfood</p>
-        <i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a>
-        <i class="fas fa-hands-helping"></i><a href="#">Devenir partenaire</a>
-        <a href="#">Mentions légales</a>
-        <a href="#">Contact</a>
+        <h4>ohmyfood</h4>
+        <i class="fas fa-utensils"></i><a href="#" class="footer__link1"><strong>Proposer un restaurant</strong></a>
+        <i class="fas fa-hands-helping"></i><a href="#" class="footer__link2"><strong>Devenir partenaire</strong></a>
+        <a href="#" class="footer__link3">Mentions légales</a>
+        <a href="#" class="footer__link4">Contact</a>
 
     </footer>
     
