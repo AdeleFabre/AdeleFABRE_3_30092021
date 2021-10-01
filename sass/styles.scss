@@ -1,9 +1,25 @@
+/* VARIABLES */
+
 $color1 : #9356DC;
 $color2 : #FF79DA;
 $color3 : #99E2D0;
 $backgroundlight : #F6F6F6 ;
 $backgroundregular: #EAEAEA;
 $footer-color : #353535;
+
+/* EXTENSIONS */
+%padding-defaut {padding : 30px 20px 30px 20px;}
+
+/* MIXINS */
+
+@mixin sidespadding {
+    padding-left : 20px;
+    padding-right : 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin : 0px;
@@ -14,27 +30,118 @@ a {
     color: black;
 }
 
+button {
+    margin : 20px;
+    padding: 15px;
+    border-radius: 30px;
+    background: linear-gradient($color2, $color1);
+    color: white;
+    border: transparent;
+    box-shadow: 5px 5px 4px lightgrey;
+}
+
 header {
-    padding: 10px;
     text-align: center;
+    img {
+        padding: 20px;
+    }
 }
 
 .localisation {
     background-color: $backgroundregular;
-    text-align: center;
+        &__name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                .fa-map-marker-alt {
+                    padding : 10px;
+                }    
+        }
 }
 
 .accueil {
     background-color: $backgroundlight;
+    @extend %padding-defaut;
     text-align: center;
+}
+
+.fonctionnement {
+    @extend %padding-defaut;
+        &__etape {
+            width : 90%;
+            background-color: $backgroundlight;
+            margin: 0px 0px 30px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px lightgrey;
+            .etape__nbr {
+                background: $color1;
+                border-radius: 20px;
+                padding: 5px 10px 5px 10px;
+                position: relative;
+                left : -10px;
+                color: white;
+            }
+            .fas {
+                color: grey;
+                padding: 0px 20px 0px 20px;
+            }
+            p {
+                font-weight: bold;
+            }
+        }
+        &__etape--degustation {
+            background-color: #F5EDFF;
+        }
 }
 
 .restaurants {
     background-color: $backgroundlight;
+    @extend %padding-defaut;
+        &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .restau {
+            border-radius: 20px;
+            width: 90%;
+            height: 200px;
+            box-shadow: 5px 5px 4px lightgrey;
+
+            &--palettedugout {
+                background: url(../images/restaurants/La-palette-du-gout.jpg) no-repeat cover;
+            }
+
+            &--noteenchantee {
+                background:$color1;
+            }
+
+            &--alafrancaise {
+                background:$color1;
+            }
+
+            &--delicedessens {
+                background:$color1;
+            }
+
+            &__bandeau {
+                background : white;
+                border-radius: 0px 0px 20px 20px;
+                display: grid;
+                grid-template-columns: 2;
+                grid-template-rows: 2;
+            }
+
+        }
 }
 
 footer {
     background-color: $footer-color;
     color : white;
+    @extend %padding-defaut;
 }
 

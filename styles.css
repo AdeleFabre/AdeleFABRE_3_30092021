@@ -1,3 +1,14 @@
+/* VARIABLES */
+/* EXTENSIONS */
+footer, .restaurants, .fonctionnement, .accueil {
+  padding: 30px 20px 30px 20px;
+}
+
+/* MIXINS */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
 }
@@ -7,14 +18,33 @@ a {
   color: black;
 }
 
+button {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  border: transparent;
+  box-shadow: 5px 5px 4px lightgrey;
+}
+
 header {
-  padding: 10px;
   text-align: center;
+}
+header img {
+  padding: 20px;
 }
 
 .localisation {
   background-color: #EAEAEA;
-  text-align: center;
+}
+.localisation__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.localisation__name .fa-map-marker-alt {
+  padding: 10px;
 }
 
 .accueil {
@@ -22,8 +52,68 @@ header {
   text-align: center;
 }
 
+.fonctionnement__etape {
+  width: 90%;
+  background-color: #F6F6F6;
+  margin: 0px 0px 30px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px lightgrey;
+}
+.fonctionnement__etape .etape__nbr {
+  background: #9356DC;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  position: relative;
+  left: -10px;
+  color: white;
+}
+.fonctionnement__etape .fas {
+  color: grey;
+  padding: 0px 20px 0px 20px;
+}
+.fonctionnement__etape p {
+  font-weight: bold;
+}
+.fonctionnement__etape--degustation {
+  background-color: #F5EDFF;
+}
+
 .restaurants {
   background-color: #F6F6F6;
+}
+.restaurants__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants .restau {
+  border-radius: 20px;
+  width: 90%;
+  height: 200px;
+  box-shadow: 5px 5px 4px lightgrey;
+}
+.restaurants .restau--palettedugout {
+  background: url(../images/restaurants/La-palette-du-gout.jpg) no-repeat cover;
+}
+.restaurants .restau--noteenchantee {
+  background: #9356DC;
+}
+.restaurants .restau--alafrancaise {
+  background: #9356DC;
+}
+.restaurants .restau--delicedessens {
+  background: #9356DC;
+}
+.restaurants .restau__bandeau {
+  background: white;
+  border-radius: 0px 0px 20px 20px;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
 }
 
 footer {
