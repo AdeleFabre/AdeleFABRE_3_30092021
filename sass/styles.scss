@@ -1,0 +1,40 @@
+$color1 : #9356DC;
+$color2 : #FF79DA;
+$color3 : #99E2D0;
+$backgroundlight : #F6F6F6 ;
+$backgroundregular: #EAEAEA;
+$footer-color : #353535;
+
+body {
+    margin : 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+}
+
+.localisation {
+    background-color: $backgroundregular;
+    text-align: center;
+}
+
+.accueil {
+    background-color: $backgroundlight;
+    text-align: center;
+}
+
+.restaurants {
+    background-color: $backgroundlight;
+}
+
+footer {
+    background-color: $footer-color;
+    color : white;
+}
+
