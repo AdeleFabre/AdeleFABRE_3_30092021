@@ -9,6 +9,7 @@ $footer-color : #353535;
 
 /* EXTENSIONS */
 %padding-defaut {padding : 30px 20px 30px 20px;}
+%padding-desktop {padding : 30px 40px 30px 40px;}
 
 /* MIXINS */
 
@@ -16,6 +17,205 @@ $footer-color : #353535;
     padding-left : 20px;
     padding-right : 20px;
 }
+
+/*Responsive Tablette*/
+@media screen and (min-width : 768px) and (max-width : 991px) {
+    section {
+        padding : 20px 40px 20px 40px !important;
+    }
+
+    .fonctionnement {
+        padding : 20px 40px 20px 40px;
+        display: grid;
+        grid-template-columns: 3;
+        grid-template-rows: 2;
+
+        h2 {
+            grid-column: 1/4;
+            grid-row: 1;
+        }
+
+        &__etape--1 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        &__etape--2 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        &__etape--3 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+    }
+
+    .restaurants__box {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        grid-row: 1fr 1fr ;
+        gap: 40px;
+        padding-bottom: 20px;
+
+        .restau--planetedugout {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .restau--noteenchantee {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .restau--alafrancaise {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .restau--delicedessens {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .restau {
+            margin-bottom : 0px !important;
+        }
+        
+    }
+}
+
+/*Responsive Desktop*/
+
+@media screen and (min-width: 992px) {
+    section {
+        padding : 20px 40px 20px 40px !important;
+    }
+
+    .fonctionnement {
+        padding : 20px 40px 20px 40px;
+        display: grid;
+        grid-template-columns: 3;
+        grid-template-rows: 2;
+
+        h2 {
+            grid-column: 1/4;
+            grid-row: 1;
+        }
+
+        &__etape--1 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        &__etape--2 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        &__etape--3 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+    }
+
+    .restaurants__box {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap : 20px;
+        padding-bottom: 20px;
+
+        .restau--planetedugout {
+            grid-column: 1;
+        }
+
+        .restau--noteenchantee {
+            grid-column: 2;
+        }
+
+        .restau--alafrancaise {
+            grid-column: 3;
+        }
+
+        .restau--delicedessens {
+            grid-column: 4;
+        }
+
+        .restau {
+            margin-bottom : 0px !important;
+        }
+        
+    }
+
+    /*Page Restaurant*/
+
+    .photorestaurant {
+        min-height : 300px;
+    }
+    
+    .menu {
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 5% 5% 60% 20%;
+        gap : 20px;
+
+        h3 {
+            grid-column: 1/4;
+            grid-row: 1; 
+        }
+
+        &__typerepas {
+            margin : 0px;
+            padding-top : 10px !important;
+        }
+
+        &__typerepas--entrees {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        &__typerepas--plats {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        &__typerepas--desserts {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        &__plats--entrees {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        &__plats--plats {
+            grid-column: 2;
+            grid-row: 3; 
+        }
+
+        &__plats--desserts {
+            grid-column: 3;
+            grid-row: 3; 
+        }
+
+        &__commande {
+            grid-column: 1/4;
+            grid-row: 4;
+        }
+
+        .btn--commander {
+            margin : 10px 0px 0px 0px !important;
+        }
+    }
+
+    .plats {
+        margin-bottom : 20px !important;
+        padding : 10px !important;
+    }
+}
+
+/*Code*/
 
 * {
     box-sizing: border-box;
@@ -69,8 +269,6 @@ p, a {
     font-size : 0.9em;
 }
 
-
-
 header {
     text-align: center;
 }
@@ -122,9 +320,6 @@ header {
             p {
                 font-weight: bold;
             }
-        }
-        &__etape--degustation {
-            background-color: #F5EDFF;
         }
 }
 
@@ -238,9 +433,21 @@ footer {
 }
 
 .photorestaurant {
+    background-size: cover;
     height : 200px;
-    img {
-        width: 100%;
+    width : 100%;
+
+    &--planetedugout {
+        background-image: url(./images/restaurants/La-palette-du-gout.jpg);
+    }
+    &--noteenchantee {
+        background-image: url(./images/restaurants/La-note-enchantee.jpg);
+    }
+    &--alafrancaise {
+        background-image: url(./images/restaurants/A-la-francaise.jpg);
+    }
+    &--delicedessens {
+        background-image: url(./images/restaurants/Le-delice-des-sens.jpg);
     }
 }
 
@@ -287,6 +494,4 @@ footer {
 .btn--commander {
     margin-bottom : 0px;
 }
-
-
 
