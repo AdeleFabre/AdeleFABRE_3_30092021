@@ -308,6 +308,14 @@ header {
             align-items: center;
             border-radius: 20px;
             box-shadow: 3px 3px 10px lightgrey;
+            &:hover {
+                cursor : pointer;
+                background-color: lighten($color1, $amount: 35);
+                box-shadow: 5px 5px 10px darken($color: lightgrey, $amount: 10);
+                & > .fas {
+                color : $color1;
+                }
+            }
             .etape__nbr {
                 background: $color1;
                 border-radius: 20px;
