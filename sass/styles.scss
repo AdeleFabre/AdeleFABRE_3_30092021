@@ -244,7 +244,7 @@ button {
 
 h1 {
     font-family: 'Shrikhand', cursive;
-    margin : 20px;
+    margin : 10px;
 }
 
 h2 {
@@ -270,7 +270,13 @@ p, a {
 }
 
 header {
-    text-align: center;
+    text-align : center;
+    .header__arrow {
+        position : absolute; 
+        left : 30px;
+        top : 25px;
+        font-size: 1.2em;
+    }
 }
 
 .localisation {
