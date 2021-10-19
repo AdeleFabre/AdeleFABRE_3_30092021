@@ -6,6 +6,8 @@ $color3 : #99E2D0;
 $backgroundlight : #F6F6F6 ;
 $backgroundregular: #EAEAEA;
 $footer-color : #353535;
+$loadersize : 60px;
+$loaderweight : 7px;
 
 /* EXTENSIONS */
 %padding-defaut {padding : 30px 20px 30px 20px;}
@@ -16,6 +18,41 @@ $footer-color : #353535;
 @mixin sidespadding {
     padding-left : 20px;
     padding-right : 20px;
+}
+
+@keyframes pageloader {
+    0% {
+        transform : rotate(0turn);
+        opacity : 1;
+    }
+    20% {
+        transform : rotate(1turn);
+        opacity : 1;
+    }
+    40% {
+        transform: rotate(2turn);
+        opacity : 1;
+    }
+    60% {
+        transform: rotate(3turn);
+        opacity : 1;
+    }
+    80% {
+        transform: rotate(4turn);
+        opacity : 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes starter {
+    0%, 90% {
+        opacity : 0;
+    }
+    100% {
+        opacity : 1;
+    }
 }
 
 /*Responsive Tablette*/
@@ -273,6 +310,10 @@ p, a {
     font-size : 0.9em;
 }
 
+header, .localisation, .accueil, .fonctionnement, .restaurants, footer {
+    animation : starter 4500ms ease-in ;
+}
+
 header {
     text-align : center;
     .header__arrow {
@@ -281,6 +322,29 @@ header {
         top : 25px;
         font-size: 1.2em;
     }
+}
+
+.pageloader {
+    height: 100%;
+    width: 100%;
+
+}
+.loader {
+    width : $loadersize;
+    height : $loadersize;
+    border : $loaderweight solid $color1;
+    border-right : $loaderweight solid $color2;
+    border-bottom: $loaderweight solid $color1;
+    border-left : $loaderweight solid $color3;
+    border-radius : $loadersize;
+    margin: auto;
+    position : absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity : 0;
+    animation : pageloader 4000ms linear 200ms;
 }
 
 .localisation {
@@ -505,9 +569,13 @@ footer {
     padding : 0px;
     margin-bottom : 10px;
     display : flex;
-    justify-content : space-between;
+    justify-content: space-between;
     box-shadow : 0px 5px 10px lightgrey;
     overflow: hidden;
+        &__bloc {
+            display: flex;
+            justify-content: space-between;
+        }
         &__detail {
             padding : 10px;
         }
@@ -523,10 +591,11 @@ footer {
             border-radius : 0px 20px 20px 0px;
             width : 15%;
             transform-origin : right;
-            transform : translateX(60px);
+            transform : translateX(80px);
             transition : transform 1000ms ease;
             .fa-check-circle {
                 padding : 20px;
+                margin : auto;
                 font-size: 1.2em;
                 transform: rotate(0deg);
                 transition : transform 1000ms ease;
@@ -535,11 +604,13 @@ footer {
         &__nom {
             font-weight: bold;
             margin : 0px 0px 5px 0px;
+            text-overflow: ellipsis;
         }
         &__accompagnement {
             margin : 0px;
             font-size: 0.8em;
             font-weight: 300;
+            text-overflow: ellipsis;
         }
     &:hover { /*Effet au survol d'un plat*/
         cursor: pointer;

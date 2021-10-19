@@ -5,6 +5,39 @@
 }
 
 /* MIXINS, KEYFRAMES */
+@keyframes pageloader {
+  0% {
+    transform: rotate(0turn);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(1turn);
+    opacity: 1;
+  }
+  40% {
+    transform: rotate(2turn);
+    opacity: 1;
+  }
+  60% {
+    transform: rotate(3turn);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(4turn);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes starter {
+  0%, 90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*Responsive Tablette*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
   section {
@@ -225,6 +258,10 @@ p, a {
   font-size: 0.9em;
 }
 
+header, .localisation, .accueil, .fonctionnement, .restaurants, footer {
+  animation: starter 4500ms ease-in;
+}
+
 header {
   text-align: center;
 }
@@ -233,6 +270,29 @@ header .header__arrow {
   left: 30px;
   top: 25px;
   font-size: 1.2em;
+}
+
+.pageloader {
+  height: 100%;
+  width: 100%;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 7px solid #9356DC;
+  border-right: 7px solid #FF79DA;
+  border-bottom: 7px solid #9356DC;
+  border-left: 7px solid #99E2D0;
+  border-radius: 60px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  animation: pageloader 4000ms linear 200ms;
 }
 
 .localisation {
@@ -449,6 +509,10 @@ footer .footer__link4 {
   box-shadow: 0px 5px 10px lightgrey;
   overflow: hidden;
 }
+.plat__bloc {
+  display: flex;
+  justify-content: space-between;
+}
 .plat__detail {
   padding: 10px;
 }
@@ -464,11 +528,12 @@ footer .footer__link4 {
   border-radius: 0px 20px 20px 0px;
   width: 15%;
   transform-origin: right;
-  transform: translateX(60px);
+  transform: translateX(80px);
   transition: transform 1000ms ease;
 }
 .plat__choice .fa-check-circle {
   padding: 20px;
+  margin: auto;
   font-size: 1.2em;
   transform: rotate(0deg);
   transition: transform 1000ms ease;
@@ -476,11 +541,13 @@ footer .footer__link4 {
 .plat__nom {
   font-weight: bold;
   margin: 0px 0px 5px 0px;
+  text-overflow: ellipsis;
 }
 .plat__accompagnement {
   margin: 0px;
   font-size: 0.8em;
   font-weight: 300;
+  text-overflow: ellipsis;
 }
 .plat:hover {
   /*Effet au survol d'un plat*/
