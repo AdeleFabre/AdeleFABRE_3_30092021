@@ -38,6 +38,16 @@
     opacity: 1;
   }
 }
+@keyframes appears {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 /*Responsive Tablette*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
   section {
@@ -259,7 +269,7 @@ p, a {
 }
 
 header, .localisation, .accueil, .fonctionnement, .restaurants, footer {
-  animation: starter 4500ms ease-in;
+  animation: starter 3500ms ease-in;
 }
 
 header {
@@ -292,7 +302,7 @@ header .header__arrow {
   left: 0;
   right: 0;
   opacity: 0;
-  animation: pageloader 4000ms linear 200ms;
+  animation: pageloader 3000ms linear 200ms;
 }
 
 .localisation {
@@ -493,6 +503,13 @@ footer .footer__link4 {
 .menu__typerepas {
   font-weight: 300;
   padding-top: 20px;
+  margin: 0px;
+}
+.menu__deco {
+  background: #99E2D0;
+  width: 40px;
+  height: 3px;
+  margin: 5px 0px 15px 0px;
 }
 .menu__commande {
   text-align: center;
@@ -508,6 +525,19 @@ footer .footer__link4 {
   justify-content: space-between;
   box-shadow: 0px 5px 10px lightgrey;
   overflow: hidden;
+  opacity: 0;
+}
+.plat--1 {
+  animation: appears 1800ms ease-in 200ms;
+  animation-fill-mode: forwards;
+}
+.plat--2 {
+  animation: appears 1800ms ease-in 400ms;
+  animation-fill-mode: forwards;
+}
+.plat--3 {
+  animation: appears 1800ms ease-in 600ms;
+  animation-fill-mode: forwards;
 }
 .plat__bloc {
   display: flex;
