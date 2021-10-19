@@ -11,11 +11,25 @@ $footer-color : #353535;
 %padding-defaut {padding : 30px 20px 30px 20px;}
 %padding-desktop {padding : 30px 40px 30px 40px;}
 
-/* MIXINS */
+/* MIXINS, KEYFRAMES */
 
 @mixin sidespadding {
     padding-left : 20px;
     padding-right : 20px;
+}
+
+@keyframes loveit {
+    0% {
+        color : transparent;
+    }
+
+    50% {
+        color: $color2;
+    }
+
+    100% {
+        color : $color1;
+    }
 }
 
 /*Responsive Tablette*/
@@ -240,6 +254,10 @@ button {
     box-shadow: 0px 5px 8px lightgrey;
     font-family: 'Roboto';
     font-size: 0.9em;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 5px 5px 10px darken($color: lightgrey, $amount: 10);
+    }
 }
 
 h1 {
@@ -308,7 +326,7 @@ header {
             align-items: center;
             border-radius: 20px;
             box-shadow: 3px 3px 10px lightgrey;
-            &:hover {
+            &:hover { /* Modification effet de survol des boutons centraux*/
                 cursor : pointer;
                 background-color: lighten($color1, $amount: 35);
                 box-shadow: 5px 5px 10px darken($color: lightgrey, $amount: 10);
@@ -366,6 +384,7 @@ header {
                 justify-content: space-between;
                 align-items: center;
             }
+
         }
         .restau--planetedugout {
             background: url(./images/restaurants/La-palette-du-gout.jpg) no-repeat center;
@@ -399,9 +418,21 @@ header {
     }
 }
 
-.fa-heart {
-    position : relative;
-    right : 20px;
+.restau__coeur{
+    &--vide {
+        z-index : 1;
+    }
+    &--plein { 
+        z-index : 0;
+        position : relative;
+        right : 18px;
+        color : $color2;
+        opacity : 0;
+        &:hover { /*Modification de l'apparence du coeur au survol*/
+            opacity : 1;
+            transition : opacity 500ms;
+        }
+    }
 }
 
 footer {

@@ -4,7 +4,18 @@
   padding: 30px 20px 30px 20px;
 }
 
-/* MIXINS */
+/* MIXINS, KEYFRAMES */
+@keyframes loveit {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: #FF79DA;
+  }
+  100% {
+    color: #9356DC;
+  }
+}
 /*Responsive Tablette*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
   section {
@@ -193,6 +204,10 @@ button {
   font-family: "Roboto";
   font-size: 0.9em;
 }
+button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #bababa;
+}
 
 h1 {
   font-family: "Shrikhand", cursive;
@@ -257,6 +272,15 @@ header .header__arrow {
   align-items: center;
   border-radius: 20px;
   box-shadow: 3px 3px 10px lightgrey;
+}
+.fonctionnement__etape:hover {
+  /* Modification effet de survol des boutons centraux*/
+  cursor: pointer;
+  background-color: #f2eafb;
+  box-shadow: 5px 5px 10px #bababa;
+}
+.fonctionnement__etape:hover > .fas {
+  color: #9356DC;
 }
 .fonctionnement__etape .etape__nbr {
   background: #9356DC;
@@ -337,9 +361,20 @@ header .header__arrow {
   margin: 0px;
 }
 
-.fa-heart {
+.restau__coeur--vide {
+  z-index: 1;
+}
+.restau__coeur--plein {
+  z-index: 0;
   position: relative;
-  right: 20px;
+  right: 18px;
+  color: #FF79DA;
+  opacity: 0;
+}
+.restau__coeur--plein:hover {
+  /*Modification de l'apparence du coeur au survol*/
+  opacity: 1;
+  transition: opacity 500ms;
 }
 
 footer {
