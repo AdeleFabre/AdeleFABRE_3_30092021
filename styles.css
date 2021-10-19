@@ -5,17 +5,6 @@
 }
 
 /* MIXINS, KEYFRAMES */
-@keyframes loveit {
-  0% {
-    color: transparent;
-  }
-  50% {
-    color: #FF79DA;
-  }
-  100% {
-    color: #9356DC;
-  }
-}
 /*Responsive Tablette*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
   section {
@@ -449,28 +438,59 @@ footer .footer__link4 {
   text-align: center;
 }
 
-.plats {
+.plat {
   text-decoration: none;
   background-color: white;
   border-radius: 20px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 5px 10px lightgrey;
+  overflow: hidden;
 }
-.plats__prix {
+.plat__detail {
+  padding: 10px;
+}
+.plat__prix {
   align-self: end;
   font-weight: bold;
+  padding-right: 20px;
 }
-.plats__nom {
+.plat__choice {
+  color: white;
+  background-color: #99E2D0;
+  text-align: center;
+  border-radius: 0px 20px 20px 0px;
+  width: 15%;
+  transform-origin: right;
+  transform: translateX(60px);
+  transition: transform 1000ms ease;
+}
+.plat__choice .fa-check-circle {
+  padding: 20px;
+  font-size: 1.2em;
+  transform: rotate(0deg);
+  transition: transform 1000ms ease;
+}
+.plat__nom {
   font-weight: bold;
-  margin: 10px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
 }
-.plats__accompagnement {
-  margin: 0px 0px 10px 0px;
+.plat__accompagnement {
+  margin: 0px;
   font-size: 0.8em;
   font-weight: 300;
+}
+.plat:hover {
+  /*Effet au survol d'un plat*/
+  cursor: pointer;
+}
+.plat:hover .plat__choice {
+  transform: translateX(0px);
+}
+.plat:hover .fa-check-circle {
+  transform: rotate(360deg);
 }
 
 .btn--commander {
