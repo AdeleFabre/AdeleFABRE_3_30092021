@@ -389,6 +389,21 @@ header .header__arrow {
   justify-content: space-between;
   align-items: center;
 }
+.restaurants .restau__nouveau {
+  background: #99E2D0;
+  color: #278870;
+  width: 25%;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  top: 15px;
+  left: 70%;
+}
+.restaurants .restau__nouveau p {
+  margin: 0px;
+  padding: 5px 1px 5px 1px;
+  font-weight: bold;
+}
 .restaurants .restau--planetedugout {
   background: url(./images/restaurants/La-palette-du-gout.jpg) no-repeat center;
   background-size: cover;

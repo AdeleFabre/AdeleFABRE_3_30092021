@@ -445,6 +445,22 @@ header {
                 align-items: center;
             }
 
+            &__nouveau {
+                background: $color3;
+                color: darken($color: $color3, $amount: 40);
+                width : 25%;
+                border-radius : 2px;
+                text-align : center;
+                position : relative;
+                top : 15px;
+                left : 70%;
+                p {
+                    margin : 0px;
+                    padding : 5px 1px 5px 1px;
+                    font-weight: bold;
+                }
+            }
+
         }
         .restau--planetedugout {
             background: url(./images/restaurants/La-palette-du-gout.jpg) no-repeat center;
