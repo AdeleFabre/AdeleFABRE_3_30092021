@@ -23,133 +23,168 @@
         <a href="index.html"><i class="fas fa-arrow-left header__arrow"></i></a>
     </header>
 
-    <main class="pagedesmenus">
-
-        <div class="photorestaurant photorestaurant--noteenchantee">
-        </div>
-
-
-        <div class="menu">
+    <div class="photorestaurant photorestaurant--noteenchantee"></div> <!-- Photo restaurant -->
+    
+    <main class="page_menus"> <!-- MAIN -->
+        <div class="page_menus__nom_restaurant"> <!-- Nom restaurant + coeur-->
             <h3>La note enchantée</h3>
-            
-            <p class="menu__typerepas menu__typerepas--entrees">ENTREES</p>
-                <div class="menu__plats menu__plats--entrees">
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Ravioles de foie gras</p>
-                            <p class="plats__accompagnement">Accompagnées de leur crème à la truffe</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">25€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Caviar osciètre</p>
-                            <p class="plats__accompagnement">Sur blini à la farine de blé noir</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">35€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Homard et espuma de ...</p>
-                            <p class="plats__accompagnement">Mariné aux zestes d'orange</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">20€</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Foie gras de canard cuit entier</p>
-                            <p class="plats__accompagnement">Confiture de figues et pain toasté</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">35€</p>
-                        </div>
-                    </a>
-                </div>
-            
-            <p class="menu__typerepas menu__typerepas--plats">PLATS</p>
-
-            <div class="menu__plats menu__plats--plats">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Noix de coquilles Saint-Jacques</p>
-                        <p class="plats__accompagnement">Sur lit de purée de céléri-rave</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">40€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Langoustine poêlée</p>
-                        <p class="plats__accompagnement">Purée de patates douces</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">35€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Mijoté de queue de boeuf</p>
-                        <p class="plats__accompagnement">Et riz sauvage aux zestes de citron</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">44€</p>
-                    </div>
-                </a>
+            <div class="page_menus__coeur_restaurant">
+                <i class="far fa-heart page_menus__coeur_restaurant--vide"></i>
+                <i class="fas fa-heart page_menus__coeur_restaurant--plein"></i>
             </div>
-            
-            <p class="menu__typerepas menu__typerepas--desserts">DESSERTS</p>
-
-            <div class="menu__plats menu__plats--desserts">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Macaron noisette et chocolat</p>
-                        <p class="plats__accompagnement">Glace au caramel brun et sel de Guérande</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">18€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Baba au rhum revisité</p>
-                        <p class="plats__accompagnement">Avec son coulis de citron</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">22€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Tarte au citron meringuée</p>
-                        <p class="plats__accompagnement">Destructurée</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">23€</p>
-                    </div>
-                </a>
-                 
-            </div>
-
-            <div class="menu__commande">
-                <button class="btn btn--commander">Commander</button>
-            </div> 
-            
         </div>
 
+        <div class="menu_all"> <!-- Menu complet (Entrées + Plats + Desserts)-->
+
+            <div class="menu"> <!-- Entrées-->
+                <h5 class="menu__type">Entrées</h5>
+
+                <div class="menu__choix"> <!-- Entrée 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Ravioles de foie gras</p>
+                        <p class="menu__texte--accompagnement">Accompagnées de leur crème à la truffe</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">25€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Entrée 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Caviar osciètre</p>
+                        <p class="menu__texte--accompagnement">Sur blinis à la farine de blé noir</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Entrée 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Homard et espuma de machins</p>
+                        <p class="menu__texte--accompagnement">Mariné aux zestes d'orange</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">20€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Entrée 4-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Foie gras de canard cuit entier</p>
+                        <p class="menu__texte--accompagnement">Confiture de figue et pain toasté</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu"> <!-- Plats-->
+                <h5 class="menu__type">Plats</h5>
+
+                <div class="menu__choix"> <!-- Plat 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Noix de coquilles Saint-Jacques</p>
+                        <p class="menu__texte--accompagnement">Sur lit de purée de céléri-rave</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">40€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Langoustine poêlée</p>
+                        <p class="menu__texte--accompagnement">Purée de patate douce</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Mijoté de queue de boeuf</p>
+                        <p class="menu__texte--accompagnement">Et rizz sauvage aux zestes de citron</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">44€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu"> <!-- Desserts-->
+                <h5 class="menu__type">Desserts</h5>
+
+                <div class="menu__choix"> <!-- Dessert 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Macaron noisette et chocolat</p>
+                        <p class="menu__texte--accompagnement">Glace au caramel brun et sel de Guérande</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">18€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Baba au rhum revisité</p>
+                        <p class="menu__texte--accompagnement">Avec son coulis de citron</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">22€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Tarte au citron meringuée</p>
+                        <p class="menu__texte--accompagnement">Destructurée</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">23€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="menu__commande"> <!-- Bouton Commander -->
+            <button class="btn btn--commander">Commander</button>
+        </div>
 
     </main>
 

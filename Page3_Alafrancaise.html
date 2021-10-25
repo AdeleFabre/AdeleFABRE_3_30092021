@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ba5422f0b6.js" crossorigin="anonymous"></script>
-    <title>A la Française</title>
+    <title>À la française</title>
 </head>
 <body>
 
@@ -23,123 +23,155 @@
         <a href="index.html"><i class="fas fa-arrow-left header__arrow"></i></a>
     </header>
 
-    <main class="pagedesmenus">
-
-        <div class="photorestaurant photorestaurant--alafrancaise">
+    <div class="photorestaurant photorestaurant--alafrancaise"></div> <!-- Photo restaurant -->
+    
+    <main class="page_menus"> <!-- MAIN -->
+        <div class="page_menus__nom_restaurant"> <!-- Nom restaurant + coeur-->
+            <h3>À la française</h3>
+            <div class="page_menus__coeur_restaurant">
+                <i class="far fa-heart page_menus__coeur_restaurant--vide"></i>
+                <i class="fas fa-heart page_menus__coeur_restaurant--plein"></i>
+            </div>
         </div>
 
+        <div class="menu_all"> <!-- Menu complet (Entrées + Plats + Desserts)-->
 
-        <div class="menu">
-            <h3>A la française</h3>
-            
-            <p class="menu__typerepas menu__typerepas--entrees">ENTREES</p>
-                <div class="menu__plats menu__plats--entrees">
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Tartare de poulpe acidulé</p>
-                            <p class="plats__accompagnement">Aux zestes d'orange</p>
+            <div class="menu"> <!-- Entrées-->
+                <h5 class="menu__type">Entrées</h5>
+
+                <div class="menu__choix"> <!-- Entrée 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Tartare de poulpe acidulé</p>
+                        <p class="menu__texte--accompagnement">Aux zestes d'orange</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">25€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
                         </div>
-                        <div class="plats__prix">
-                            <p class="prix">25€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Velouté de légumes d'antan</p>
-                            <p class="plats__accompagnement">Carotte, panais, topinambour</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">35€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Soupe à l'oignon</p>
-                            <p class="plats__accompagnement">Revisitée</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">20€</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-            
-            <p class="menu__typerepas menu__typerepas--plats ">PLATS</p>
 
-            <div class="menu__plats menu__plats--plats">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Coquilles Saint-Jacques</p>
-                        <p class="plats__accompagnement">Accompagnées d'une purée de panais</p>
+                <div class="menu__choix"> <!-- Entrée 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Velouté de l"gumes d'antan</p>
+                        <p class="menu__texte--accompagnement">Carotte, panais, topinambour</p>
                     </div>
-                    <div class="plats__prix">
-                        <p class="prix">40€</p>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                     </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Magret de canard</p>
-                        <p class="plats__accompagnement">Et parmentier de pommes de terre</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">35€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Pigeonneau d'Ille-et-Vilaine</p>
-                        <p class="plats__accompagnement">Sur son lit de gnocchis aux légumes</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">44€</p>
-                    </div>
-                </a>
-            </div>
-            
-            <p class="menu__typerepas menu__typerepas--desserts">DESSERTS</p>
+                </div>
 
-            <div class="menu__plats menu__plats--desserts">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Pétales de violette glacés</p>
-                        <p class="plats__accompagnement">Et purée de noisettes</p>
+                <div class="menu__choix"> <!-- Entrée 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Soupe à l'oignon</p>
+                        <p class="menu__texte--accompagnement">Revisitée</p>
                     </div>
-                    <div class="plats__prix">
-                        <p class="prix">18€</p>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">20€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                     </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Fondant au chocolat</p>
-                        <p class="plats__accompagnement">Revisité</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">22€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Millefeuille croustillant</p>
-                        <p class="plats__accompagnement">Myrtilles et pâte d'amande</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">23€</p>
-                    </div>
-                </a>
-                 
+                </div>
+
             </div>
 
-            <div class="menu__commande">
-                <button class="btn btn--commander">Commander</button>
-            </div> 
-            
+            <div class="menu"> <!-- Plats-->
+                <h5 class="menu__type">Plats</h5>
+
+                <div class="menu__choix"> <!-- Plat 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Coquilles Saint-Jacques</p>
+                        <p class="menu__texte--accompagnement">Accompagné d'une purée de panais</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">40€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Magret de canard</p>
+                        <p class="menu__texte--accompagnement">Et parmentier de pommes de terres</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Pigeonneau d'Ille-et-Vilaine</p>
+                        <p class="menu__texte--accompagnement">Sur son lit de gnocchis aux légumes</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">44€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu"> <!-- Desserts-->
+                <h5 class="menu__type">Desserts</h5>
+
+                <div class="menu__choix"> <!-- Dessert 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Pétales de violette glacés</p>
+                        <p class="menu__texte--accompagnement">Et purée de noisettes</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">18€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Fondant au chocolat</p>
+                        <p class="menu__texte--accompagnement">Revisité</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">22€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Millefeuille croustillant</p>
+                        <p class="menu__texte--accompagnement">Myrtilles et pâte d'amande</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">23€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
+        <div class="menu__commande"> <!-- Bouton Commander -->
+            <button class="btn btn--commander">Commander</button>
+        </div>
 
     </main>
 

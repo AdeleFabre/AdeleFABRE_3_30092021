@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ba5422f0b6.js" crossorigin="anonymous"></script>
-    <title>Le délice des sens</title>
+    <title>Le Délice des sens</title>
 </head>
 <body>
 
@@ -23,123 +23,155 @@
         <a href="index.html"><i class="fas fa-arrow-left header__arrow"></i></a>
     </header>
 
-    <main class="pagedesmenus">
-
-        <div class="photorestaurant photorestaurant--delicedessens">
-        </div>
-
-
-        <div class="menu">
+    <div class="photorestaurant photorestaurant--delicedessens"></div> <!-- Photo restaurant -->
+    
+    <main class="page_menus"> <!-- MAIN -->
+        <div class="page_menus__nom_restaurant"> <!-- Nom restaurant + coeur-->
             <h3>Le délice des sens</h3>
-            
-            <p class="menu__typerepas menu__typerepas--entrees">ENTREES</p>
-                <div class="menu__plats menu__plats--entrees">
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Tartare de thon</p>
-                            <p class="plats__accompagnement">Assaisonné au yuzu</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">25€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Bouchée de homard croustillant</p>
-                            <p class="plats__accompagnement">Et sa farandole de petits légumes</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">35€</p>
-                        </div>
-                    </a>
-                
-                    <a href="#" class="plats">
-                        <div class="plats__detail">
-                            <p class="plats__nom">Velouté de cèpes</p>
-                            <p class="plats__accompagnement">Aux truffes</p>
-                        </div>
-                        <div class="plats__prix">
-                            <p class="prix">20€</p>
-                        </div>
-                    </a>
-                </div>
-            
-            <p class="menu__typerepas menu__typerepas--plats">PLATS</p>
-
-            <div class="menu__plats menu__plats--plats">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Poulet rôti aux herbes de Provence</p>
-                        <p class="plats__accompagnement">Et sa crème de truffes</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">40€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Langoustine rôtie</p>
-                        <p class="plats__accompagnement">Et ses légumes de saison</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">35€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Côte de boeuf Angus</p>
-                        <p class="plats__accompagnement">Et sa purée de panais</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">44€</p>
-                    </div>
-                </a>
+            <div class="page_menus__coeur_restaurant">
+                <i class="far fa-heart page_menus__coeur_restaurant--vide"></i>
+                <i class="fas fa-heart page_menus__coeur_restaurant--plein"></i>
             </div>
-            
-            <p class="menu__typerepas menu__typerepas--desserts">DESSERTS</p>
-
-            <div class="menu__plats menu__plats--desserts">
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Farandole de desserts</p>
-                        <p class="plats__accompagnement">Du chef</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">18€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Crème brûlée</p>
-                        <p class="plats__accompagnement">Revisitée</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">22€</p>
-                    </div>
-                </a>
-            
-                <a href="#" class="plats">
-                    <div class="plats__detail">
-                        <p class="plats__nom">Tiramisu</p>
-                        <p class="plats__accompagnement">A la noisette</p>
-                    </div>
-                    <div class="plats__prix">
-                        <p class="prix">23€</p>
-                    </div>
-                </a>
-                 
-            </div>
-
-            <div class="menu__commande">
-                <button class="btn btn--commander">Commander</button>
-            </div> 
-            
         </div>
 
+        <div class="menu_all"> <!-- Menu complet (Entrées + Plats + Desserts)-->
+
+            <div class="menu"> <!-- Entrées-->
+                <h5 class="menu__type">Entrées</h5>
+
+                <div class="menu__choix"> <!-- Entrée 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Tartare de thon</p>
+                        <p class="menu__texte--accompagnement">Assaisonné au yuzu</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">25€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Entrée 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Bouchée de homard croustillant</p>
+                        <p class="menu__texte--accompagnement">Et sa farandole de petits légumes</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Entrée 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Velouté de cèpes</p>
+                        <p class="menu__texte--accompagnement">Aux truffes</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">20€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu"> <!-- Plats-->
+                <h5 class="menu__type">Plats</h5>
+
+                <div class="menu__choix"> <!-- Plat 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Poulet rôti aux herbes de provence</p>
+                        <p class="menu__texte--accompagnement">Et sa crème de truffe</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">40€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Langouste rôtie</p>
+                        <p class="menu__texte--accompagnement">Et ses légumes de saison</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">35€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Plat 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Côte de boeuf Angus</p>
+                        <p class="menu__texte--accompagnement">Et sa purée de panais</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">44€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu"> <!-- Desserts-->
+                <h5 class="menu__type">Desserts</h5>
+
+                <div class="menu__choix"> <!-- Dessert 1-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Farandole de desserts</p>
+                        <p class="menu__texte--accompagnement">Du Chef</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">18€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 2-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Crème brûlée</p>
+                        <p class="menu__texte--accompagnement">Revisitée</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">22€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__choix"> <!-- Dessert 3-->
+                    <div class="menu__texte">
+                        <p class="menu__texte--nom">Tiramisu</p>
+                        <p class="menu__texte--accompagnement">A la noisette</p>
+                    </div>
+                    <div class="menu__prix_et_choix">
+                        <p class="menu__prix_et_choix--prix">23€</p>
+                        <div class="menu__prix_et_choix--check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="menu__commande"> <!-- Bouton Commander -->
+            <button class="btn btn--commander">Commander</button>
+        </div>
 
     </main>
 

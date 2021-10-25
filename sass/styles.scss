@@ -1,4 +1,4 @@
-/* VARIABLES */
+/* VARIABLES, MAPS */
 
 $color1 : #9356DC;
 $color2 : #FF79DA;
@@ -6,15 +6,12 @@ $color3 : #99E2D0;
 $backgroundlight : #F6F6F6 ;
 $backgroundregular: #EAEAEA;
 $footer-color : #353535;
+
 $loadersize : 60px;
 $loaderweight : 7px;
+$duree_appears : 400ms;
 
-/* MAPS */
-
-$breakpoints: (
-    mobile : 768px,
-    tablette : 992px
-);
+$breakpoints: (mobile : 768px, tablette : 992px);
 
 /* EXTENSIONS */
 %padding-defaut {padding : 30px 20px 30px 20px;}
@@ -88,7 +85,78 @@ $breakpoints: (
     
 }
 
-/*Code*/
+/* Page Menus : Animation coeur*/
+
+@keyframes loveit--full {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    55% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(10deg);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(-10deg);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes loveit--empty {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Page Menus : Animation du menu*/
+
+@keyframes appears {
+    0% {
+        opacity: 0;
+        transform : translateY(15px);
+    }
+    100% {
+        opacity : 1;
+        transform : translateY(0px);
+    }
+}
+.menu__choix:nth-child(2) {
+    animation : appears $duree_appears ease-in 100ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(3) {
+    animation : appears $duree_appears ease-in 200ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(4) {
+    animation : appears $duree_appears ease-in 300ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(5) {
+    animation : appears $duree_appears ease-in 400ms;
+    animation-fill-mode: backwards;
+}
+
+/* --------------------------------------------------- Code --------------------------------------------- */
 
 * {
     box-sizing: border-box;
@@ -381,146 +449,18 @@ footer {
 
 
 /* --------------------------------------- Pages Restaurants ----------------------------------------------- */
-/*
-
-.pagedesmenus {
-    background-color: $backgroundlight;
-}
-
-.photorestaurant {
-    background-size: cover;
-    height : 200px;
-    width : 100%;
-
-    &--planetedugout {
-        background-image: url(./images/restaurants/La-palette-du-gout.jpg);
-    }
-    &--noteenchantee {
-        background-image: url(./images/restaurants/La-note-enchantee.jpg);
-    }
-    &--alafrancaise {
-        background-image: url(./images/restaurants/A-la-francaise.jpg);
-    }
-    &--delicedessens {
-        background-image: url(./images/restaurants/Le-delice-des-sens.jpg);
-    }
-}
-
-.menu {
-    @extend %padding-defaut;
-    padding-bottom : 0px;
-    border-radius : 30px 30px 0px 0px;
-    background-color : $backgroundlight;
-    position: relative;
-    top : -30px;
-        &__typerepas {
-            font-weight : 300;
-            padding-top : 20px;
-            margin : 0px;   
-        }
-        &__deco {
-            background: $color3;
-            width : 40px;
-            height : 3px;
-            margin : 5px 0px 15px 0px;
-        }
-        &__commande {
-            text-align: center;
-        }
-}
-
-.plat {
-    text-decoration : none;
-    background-color : white;
-    border-radius : 20px;
-    padding : 0px;
-    margin-bottom : 10px;
-    display : flex;
-    justify-content: space-between;
-    box-shadow : 0px 5px 10px lightgrey;
-    overflow: hidden;
-    opacity: 0;
-    &--1 {
-        animation: appears 800ms ease-in 200ms;
-        animation-fill-mode: forwards;
-    }
-    &--2 {
-        animation: appears 800ms ease-in 400ms;
-        animation-fill-mode: forwards;
-    }
-    &--3 {
-        animation: appears 800ms ease-in 600ms;
-        animation-fill-mode: forwards;
-    }
-    &__detail {
-        padding : 10px;
-    }
-    &__bloc {
-        display: flex;
-        justify-content: flex-end;
-        overflow: hidden;
-        transform-origin : right;
-        transform : translateX(60%);
-        transition : transform 400ms ease;
-    }
-        
-        &__prix {
-            align-self : end;
-            font-weight : bold;
-            padding-right : 20px;
-        }
-        &__choice {
-            color : white;
-            background-color: $color3;
-            text-align: center;
-            border-radius : 0px 20px 20px 0px;
-            width : 60%;
-            
-            .fa-check-circle {
-                padding : 20px;
-                margin : auto;
-                vertical-align: middle;
-                font-size: 1.2em;
-                transform: rotate(0deg);
-                transition : transform 400ms ease;
-            }
-        }
-        &__nom {
-            font-weight: bold;
-            margin : 0px 0px 5px 0px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        &__accompagnement { 
-            margin : 0px;
-            font-size: 0.8em;
-            font-weight: 300;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            
-        }
-    &:hover { 
-        cursor: pointer;
-        & .plat__bloc {
-            transform : translateX(0px);
-        }
-        & .fa-check-circle {
-            transform : rotate(360deg);
-        }
-    }
-}
-
-.btn--commander {
-    margin-bottom : 0px;
-}*/
-
-/* ----------- Réécriture page des menus -------------*/
 
 /* Photo du Restaurant*/
 .photorestaurant {
     background-size: cover;
     height : 200px;
     width : 100%;
+    @include tablette-only {
+        height : 300px;
+    }
+    @include desktop-only {
+        height : 300px;
+    }
     &--palettedugout {
         background-image: url(./images/restaurants/La-palette-du-gout.jpg);
     }
@@ -543,14 +483,32 @@ footer {
     top: -30px;
     border-radius: 40px 40px 0px 0px;
     margin-bottom: -30px;
+    @include tablette-only {
+        padding : 30px 50px 0px 50px;
+    }
+    @include desktop-only {
+        padding : 30px 20px 0px 20px;
+    }
     &__nom_restaurant {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 1.2em;
+        @include tablette-only {
+            font-size: 1.5em;
+        }
+        @include desktop-only {
+            font-size: 1.5em;
+            justify-content: center;
+            padding : 30px 0px 40px 0px;
+        }
     }
     &__coeur_restaurant {
         margin: 0 50px 30px 0;
+        @include desktop-only {
+            margin-left : 30px;
+            font-size: 0.9em;
+        }
         &--vide {
             font-size: 1.4em;
             position: absolute;
@@ -579,6 +537,13 @@ footer {
 
 /* Style Menus */
 .menu {
+    &_all {
+        @include desktop-only {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        gap : 10px;
+        }
+    }
     &__type { /*Définition styles Entrées, Plats, Desserts*/
         font-family: 'Roboto', sans-serif;
         font-size: 1.1em;
@@ -594,9 +559,17 @@ footer {
             position: absolute;
             bottom : -10px;
             left : 0px;
+            @include desktop-only {
+                left : 0px;
+                right : 0px;
+            }
         }
+        
     }
     &__choix { /*Style pour chaque choix de plat*/
+        @include desktop-only {
+            width: 98%;
+        }
         display: flex;
         justify-content: space-between;
         border-radius : 20px;
@@ -664,83 +637,25 @@ footer {
     &__commande {
         text-align: center;
         margin-top : 20px;
+        @include tablette-only {
+            margin :0px;
+            padding: 20px 0px 30px 0px;
+        }
+        @include desktop-only {
+            padding : 0px 0px 30px 0px; 
+        }
         &:hover + button {
             box-shadow : 0px 5px 20px lightgrey;
         }
         .btn--commander {
             width: 50%;
+            @include tablette-only {
+                width : 35%;
+            }
+            @include desktop-only {
+                width : 25%;
+            }
         }
     }
 }
 
-/* Page Menus : Animation coeur*/
-
-@keyframes loveit--full {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    40% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    55% {
-        opacity: 1;
-        transform: scale(1);
-        transform: rotate(10deg);
-    }
-    70% {
-        opacity: 1;
-        transform: scale(1);
-        transform: rotate(-10deg);
-    }
-    85% {
-        opacity: 1;
-        transform: scale(1);
-        transform: rotate(10deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes loveit--empty {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Page Menus : Animation du menu*/
-
-$duree_appears : 400ms;
-@keyframes appears {
-    0% {
-        opacity: 0;
-        transform : translateY(15px);
-    }
-    100% {
-        opacity : 1;
-        transform : translateY(0px);
-    }
-}
-.menu__choix:nth-child(2) {
-    animation : appears $duree_appears ease-in 100ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(3) {
-    animation : appears $duree_appears ease-in 200ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(4) {
-    animation : appears $duree_appears ease-in 300ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(5) {
-    animation : appears $duree_appears ease-in 400ms;
-    animation-fill-mode: backwards;
-}
