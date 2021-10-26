@@ -211,7 +211,7 @@ h4 {
 
 p, a {
     font-family : 'Roboto', sans-serif;
-    font-size : 0.9em;
+    font-size : 1em;
 }
 
 header {
@@ -278,8 +278,25 @@ header {
 
 .fonctionnement {
     @extend %padding-defaut;
+    &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+        h2 {
+            @include tablette-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            @include desktop-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
         &__etape {
             width : 90%;
+            max-width: 350px;
             background-color: $backgroundlight;
             margin: 0px 0px 30px 20px;
             display: flex;
@@ -308,10 +325,12 @@ header {
             }
             .fas {
                 color: grey;
-                padding: 0px 20px 0px 20px;
+                padding: 0px 30px 0px 20px;
+                font-size: 1.2em;
             }
             p {
                 font-weight: bold;
+                font-size: 1em;
             }
         }
 }
@@ -319,6 +338,16 @@ header {
 .restaurants {
     background-color: $backgroundlight;
     @extend %padding-defaut;
+        h2 {
+            @include tablette-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            @include desktop-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
         &__box {
             display: flex;
             flex-direction: column;
@@ -326,8 +355,7 @@ header {
             align-items: center;
             @include desktop-only {
                 display: grid;
-                grid-template-columns: 50% 50%;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 24% 24% 24% 24%;
                 gap : 20px;
                 margin-right : 20px;
             }
