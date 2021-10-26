@@ -36,55 +36,6 @@ $breakpoints: (mobile : 768px, tablette : 992px);
     padding-right : 20px;
 }
 
-@keyframes pageloader {
-    0% {
-        opacity : 1;
-    }
-    20% {
-        opacity : 1;
-    }
-    40% {
-        opacity : 1;
-    }
-    60% {
-        opacity : 1;
-    }
-    80% {
-        opacity : 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes loader {
-    0% {
-        transform : rotate(0turn);
-        opacity: 1;
-    }
-    20% {
-        transform : rotate(1turn);
-        opacity: 1;
-    }
-    40% {
-        transform: rotate(2turn);
-        opacity: 1;
-    }
-    60% {
-        transform: rotate(3turn);
-        opacity: 1;
-    }
-    80% {
-        transform: rotate(4turn);
-        opacity: 1;
-    }
-    85% {
-        transform: rotate(-1turn);
-        opacity: 1;
-    }
-    
-}
-
 /* Page d'Accueil + Page Menus : Animation coeur*/
 
 @keyframes loveit--full {
@@ -214,6 +165,83 @@ p, a {
     font-size : 1em;
 }
 
+@keyframes loader--rolling {
+    0% {
+        transform: rotate(2turn);
+        opacity: 1;
+    }
+    25% {
+        transform: rotate(3turn);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(4turn);
+        opacity: 1;
+    }
+    75% {
+        transform: rotate(-3turn);
+        opacity: 0.5;
+    }
+    90% {
+        transform: rotate(-2turn);
+        opacity: 0.2;
+    }
+    100% {
+        transform: rotate(-1turn);
+        opacity: 0;
+    }
+}
+
+@keyframes loader--appears {
+ 0%, 60% {
+    opacity : 1;
+    transform: translateX(0px);
+ }
+ 99% {
+     opacity: 1;
+     transform: translateX(0px);
+ }
+
+ 100% {
+    opacity : 0;
+    transform: translateX(9999px);
+ }
+}
+
+.pageloader {
+    background-color:$backgroundlight;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-9999px);
+    animation: loader--appears 2800ms ease-out;
+    &__loader {
+        height: $loadersize;
+        width: $loadersize;
+        border-top: 5px solid $color1;
+        border-right: 5px solid $color2;
+        border-bottom: 5px solid $color1;
+        border-left: 5px solid $color3;
+        border-radius: $loadersize;
+        margin : auto;
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        animation: loader--rolling 2500ms linear 100ms;
+    }
+}
+
 header {
     text-align : center;
     .header__arrow {
@@ -223,40 +251,6 @@ header {
         font-size: 1.2em;
     }
 }
-
-/*.pageloader {
-    height: 100%;
-    width: 100%;
-    background-color:$backgroundlight;
-    overflow: hidden;
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    animation : pageloader 3000ms forwards;
-    &__loader {
-        width : $loadersize;
-        height : $loadersize;
-        border : $loaderweight solid $color1;
-        border-right : $loaderweight solid $color2;
-        border-bottom: $loaderweight solid $color1;
-        border-left : $loaderweight solid $color3;
-        border-radius : $loadersize;
-        margin: auto;
-        position : absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        opacity: 0;
-        animation: loader 2500ms linear 200ms; 
-    }
-}*/
 
 .localisation {
     background-color: $backgroundregular;
