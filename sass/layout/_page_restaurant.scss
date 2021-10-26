@@ -1,0 +1,224 @@
+.photorestaurant {
+    background-size: cover;
+    height : 200px;
+    width : 100%;
+    @include tablette-only {
+        height : 300px;
+    }
+    @include desktop-only {
+        height : 300px;
+    }
+    &--palettedugout {
+        background-image: url(./images/restaurants/La-palette-du-gout.jpg);
+    }
+    &--noteenchantee {
+        background-image: url(./images/restaurants/La-note-enchantee.jpg);
+    }
+    &--alafrancaise {
+        background-image: url(./images/restaurants/A-la-francaise.jpg);
+    }
+    &--delicedessens {
+        background-image: url(./images/restaurants/Le-delice-des-sens.jpg);
+    }
+}
+
+/* Conteneur Main > Style Nom du restaurant + coeur */
+.page_menus { 
+    @extend %padding-defaut;
+    background-color: $backgroundlight;
+    position: relative;
+    top: -30px;
+    border-radius: 40px 40px 0px 0px;
+    margin-bottom: -30px;
+    @include tablette-only {
+        padding : 30px 50px 0px 50px;
+    }
+    @include desktop-only {
+        padding : 30px 20px 0px 20px;
+    }
+    &__nom_restaurant {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2em;
+        @include tablette-only {
+            font-size: 1.5em;
+        }
+        @include desktop-only {
+            font-size: 1.5em;
+            justify-content: center;
+            padding : 30px 0px 40px 0px;
+        }
+    }
+    &__coeur_restaurant {
+        margin: 0 50px 30px 0;
+        @include desktop-only {
+            margin-left : 30px;
+            font-size: 0.9em;
+        }
+        &--vide {
+            font-size: 1.4em;
+            position: absolute;
+            color: $footer-color;
+            opacity: 1;
+        }
+        &--plein {
+            font-size: 1.4em;
+            position: absolute;
+            opacity : 0;
+            color: transparent;
+            background: linear-gradient(to top, $color1, $color2);
+            -webkit-background-clip: text;
+            transform-origin: bottom;
+        }
+        &:hover {
+            cursor: pointer;
+            & .page_menus__coeur_restaurant--vide {
+                animation: loveit--empty 300ms linear 100ms forwards;
+            }
+            & .page_menus__coeur_restaurant--plein {
+                animation: loveit--full 500ms ease-in 100ms forwards;
+            }
+        }
+    }
+}
+
+/* Style Menus pour animation au chargement de la page*/
+.menu {
+    &_all {
+        @include desktop-only {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        gap : 10px;
+        }
+    }
+    &__type { /*Définition styles Entrées, Plats, Desserts*/
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin : 30px 0px 30px 0px;
+        position: relative;
+        &::after { /*Petits traits verts*/
+            content: "";
+            background-color: $color3;
+            height: 3px;
+            width: 50px;
+            position: absolute;
+            bottom : -10px;
+            left : 0px;
+            @include desktop-only {
+                left : 0px;
+                right : 0px;
+            }
+        }
+        
+    }
+    &__choix { /*Style pour chaque choix de plat*/
+        @include desktop-only {
+            width: 98%;
+        }
+        display: flex;
+        justify-content: space-between;
+        border-radius : 20px;
+        margin-bottom : 15px;
+        background-color: white;
+        padding-left: 15px;
+        @include ombre-regular;
+        overflow: hidden;
+        &:hover { /*effet au survol du plat > coche verte sur la droite*/
+            cursor: pointer;
+            @include ombre-hover();
+            & .menu__prix_et_choix--check {
+                width : 80px;
+                transition-duration: 500ms;
+            }
+            & .fa-check-circle {
+                transform: rotate(1turn);
+            }
+        }
+    }
+    &__texte { /* = menu_choix_liste*/
+        white-space: nowrap;
+        overflow: hidden;
+        &--nom {
+            font-weight: bolder;
+            font-size: 1.05em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding : 10px 0px 5px 0px;
+            margin : 0px;
+        }
+        &--accompagnement {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding : 0px 0px 10px 0px;
+            margin : 0px;
+            font-size: 0.9em;
+        }
+    }
+    &__prix_et_choix { /* = menu_choix_complement*/
+        display: flex;
+
+        &--prix {
+            font-weight: bold;    
+            align-self: flex-end;
+            margin-right: 20px;
+            margin-left : 20px;
+        }
+        &--check {
+            color : white;
+            background-color: $color3;
+            font-size : 1.3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width : 0px;
+            .fa-check-circle {
+                transform: rotate(0);
+                transition: transform 500ms;
+            }
+        }
+    }
+    &__commande {
+        text-align: center;
+        margin-top : 20px;
+        @include tablette-only {
+            margin :0px;
+            padding: 20px 0px 30px 0px;
+        }
+        @include desktop-only {
+            padding : 0px 0px 30px 0px; 
+        }
+        &:hover + button {
+            @include ombre-hover;
+        }
+        .btn--commander {
+            width: 50%;
+            @include tablette-only {
+                width : 35%;
+            }
+            @include desktop-only {
+                width : 25%;
+            }
+        }
+    }
+}
+.menu__choix:nth-child(2) {
+    animation : appears $duree_appears ease-in 100ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(3) {
+    animation : appears $duree_appears ease-in 200ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(4) {
+    animation : appears $duree_appears ease-in 300ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(5) {
+    animation : appears $duree_appears ease-in 400ms;
+    animation-fill-mode: backwards;
+}

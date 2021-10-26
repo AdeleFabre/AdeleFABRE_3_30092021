@@ -1,0 +1,58 @@
+.fonctionnement {
+    @extend %padding-defaut;
+    &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+        h2 {
+            @include tablette-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            @include desktop-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
+        &__etape {
+            width : 90%;
+            max-width: 350px;
+            background-color: $backgroundlight;
+            margin: 0px 0px 30px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 20px;
+            @include ombre-regular ;
+            &:hover { /* Modification effet de survol des boutons centraux*/
+                cursor : pointer;
+                background-color: lighten($color1, $amount: 35);
+                @include ombre-hover ;
+                & > .fas {
+                color : $color1;
+                }
+            }
+            .etape__nbr {
+                background: $color1;
+                border-radius: 20px;
+                padding: 5px 10px 5px 10px;
+                position: relative;
+                left : -12px;
+                color: white;
+                font-family: 'Roboto';
+                font-size : 0.9em;
+                font-weight : normal;
+            }
+            .fas {
+                color: grey;
+                padding: 0px 30px 0px 20px;
+                font-size: 1.2em;
+            }
+            p {
+                font-weight: bold;
+                font-size: 1em;
+            }
+        }
+}

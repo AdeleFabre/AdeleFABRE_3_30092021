@@ -1,0 +1,132 @@
+.restaurants {
+    background-color: $backgroundlight;
+    @extend %padding-defaut;
+        h2 {
+            @include tablette-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            @include desktop-only {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
+        &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            @include desktop-only {
+                display: grid;
+                grid-template-columns: 24% 24% 24% 24%;
+                gap : 20px;
+                margin-right : 20px;
+            }
+            @include tablette-only {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 1fr 1fr;
+                gap : 20px;
+                margin-right : 20px;
+            }
+        }
+        .restau {
+            border-radius: 20px;
+            width: 100%;
+            height: 200px;
+            @include ombre-regular;
+            position : relative;
+            margin-bottom : 20px;
+            z-index: 0;
+            transform: scale(1);
+            transition : 300ms ease;
+            &:hover {
+                @include ombre-hover;
+                transform: scale(1.01);
+            }
+            &__bandeau {
+                height : 30%;
+                width : 100%;
+                position : absolute;
+                bottom : -1px;
+                background : white;
+                border-radius: 0px 0px 20px 20px;
+                padding : 10px;
+                display : flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &__nouveau {
+                background: $color3;
+                color: darken($color: $color3, $amount: 40);
+                width : 25%;
+                border-radius : 2px;
+                text-align : center;
+                position : relative;
+                top : 15px;
+                left : 70%;
+                p {
+                    margin : 0px;
+                    padding : 5px 1px 5px 1px;
+                    font-weight: bold;
+                }
+            }
+
+        }
+        .restau--planetedugout {
+            background: url(./images/restaurants/La-palette-du-gout.jpg) no-repeat center;
+            background-size : cover;
+        }
+        .restau--noteenchantee {
+            background: url(./images/restaurants/La-note-enchantee.jpg) no-repeat center;
+            background-size : cover;
+        }
+        .restau--alafrancaise {
+            background: url(./images/restaurants/A-la-francaise.jpg) no-repeat center;
+            background-size : cover;
+        }
+        .restau--delicedessens {
+            background: url(./images/restaurants/Le-delice-des-sens.jpg) no-repeat center;
+            background-size : cover;
+        }
+}
+.restau__texte {
+    display: flex;
+    flex-flow : column;
+    justify-content: space-between;
+    align-items: flex-start;
+    .restau__nom {
+        font-weight: bolder;
+        margin : 0px 0px 5px 0px;
+    }
+    .restau__quartier {
+        margin : 0px;
+    }
+}
+.restau__coeur{
+    z-index: 100;
+    &:hover {
+        .restau__coeur--vide {
+            animation: loveit--empty 300ms linear 100ms forwards;
+        }
+        .restau__coeur--plein {
+            animation: loveit--full 500ms ease-in 100ms forwards;
+        }
+    }
+    &--vide {
+        color: $footer-color;
+        opacity: 1;  
+        font-size: 1.2em;     
+    }
+    &--plein { 
+        position : relative;
+        right : 22px;
+        font-size: 1.2em;
+        opacity : 0;
+        color: transparent;
+        background: linear-gradient(to top, $color1, $color2);
+        -webkit-background-clip: text;
+        transform-origin: bottom;
+        
+    } 
+}

@@ -1,0 +1,98 @@
+/* KEYFRAMES */
+
+
+
+/* Page d'accueil : loader */
+@keyframes loader--rolling {
+    0% {
+        transform: rotate(2turn);
+        opacity: 1;
+    }
+    25% {
+        transform: rotate(3turn);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(4turn);
+        opacity: 1;
+    }
+    75% {
+        transform: rotate(-3turn);
+        opacity: 0.5;
+    }
+    90% {
+        transform: rotate(-2turn);
+        opacity: 0.2;
+    }
+    100% {
+        transform: rotate(-1turn);
+        opacity: 0;
+    }
+}
+@keyframes loader--appears {
+ 0%, 60% {
+    opacity : 1;
+    transform: translateX(0px);
+ }
+ 99% {
+     opacity: 1;
+     transform: translateX(0px);
+ }
+
+ 100% {
+    opacity : 0;
+    transform: translateX(9999px);
+ }
+}
+
+/* Page d'Accueil + Page Menus : Animation coeur*/
+@keyframes loveit--full {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    55% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(10deg);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(-10deg);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+}
+@keyframes loveit--empty {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Page Menus : Animation du menu*/
+@keyframes appears {
+    0% {
+        opacity: 0;
+        transform : translateY(15px);
+    }
+    100% {
+        opacity : 1;
+        transform : translateY(0px);
+    }
+}

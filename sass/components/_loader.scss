@@ -1,0 +1,33 @@
+.pageloader {
+    background-color:$backgroundlight;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-9999px);
+    animation: loader--appears 2800ms ease-out;
+    &__loader {
+        height: $loadersize;
+        width: $loadersize;
+        border-top: 5px solid $color1;
+        border-right: 5px solid $color2;
+        border-bottom: 5px solid $color1;
+        border-left: 5px solid $color3;
+        border-radius: $loadersize;
+        margin : auto;
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        animation: loader--rolling 2500ms linear 100ms;
+    }
+}

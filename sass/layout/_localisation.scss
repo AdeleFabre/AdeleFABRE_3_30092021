@@ -1,0 +1,12 @@
+.localisation {
+    background-color: $backgroundregular;
+    box-shadow: inset 0px 10px 5px -5px #d4d4d4;
+        &__name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                .fa-map-marker-alt {
+                    padding : 10px;
+                }    
+        }
+}

@@ -1,0 +1,21 @@
+/* MIXINS */
+
+/* Ombres */
+@mixin ombre-regular {
+    box-shadow: 0px 5px 8px $shadowbase;
+}
+@mixin ombre-hover {
+    box-shadow: 0px 5px 8px darken($shadowbase, 15);
+}
+
+/* Versions Responsive Tablette & Desktop */
+@mixin tablette-only {
+    @media screen and (min-width : map-get($breakpoints, mobile)) and (max-width : map-get($breakpoints, tablette)) {
+        @content;
+    }
+}
+@mixin desktop-only {
+    @media screen and (min-width : map-get($breakpoints, tablette)) {
+        @content;
+    }
+}
