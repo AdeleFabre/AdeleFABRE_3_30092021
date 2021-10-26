@@ -6,6 +6,7 @@ $color3 : #99E2D0;
 $backgroundlight : #F6F6F6 ;
 $backgroundregular: #EAEAEA;
 $footer-color : #353535;
+$shadowbase :lightgrey;
 
 $loadersize : 60px;
 $loaderweight : 7px;
@@ -17,27 +18,72 @@ $breakpoints: (mobile : 768px, tablette : 992px);
 %padding-defaut {padding : 30px 20px 30px 20px;}
 %padding-desktop {padding : 30px 40px 30px 40px;}
 
-/* MIXINS, KEYFRAMES */
+/* --------------- MIXINS, KEYFRAMES --------------- */
 
+/* Ombres */
+@mixin ombre-regular {
+    box-shadow: 0px 5px 8px $shadowbase;
+}
+@mixin ombre-hover {
+    box-shadow: 0px 5px 8px darken($shadowbase, 15);
+}
+
+/* Versions Responsive Tablette & Desktop */
 @mixin tablette-only {
     @media screen and (min-width : map-get($breakpoints, mobile)) and (max-width : map-get($breakpoints, tablette)) {
         @content;
     }
 }
-
 @mixin desktop-only {
     @media screen and (min-width : map-get($breakpoints, tablette)) {
         @content;
     }
 }
 
-@mixin sidespadding {
-    padding-left : 20px;
-    padding-right : 20px;
+/* Page d'accueil : loader */
+@keyframes loader--rolling {
+    0% {
+        transform: rotate(2turn);
+        opacity: 1;
+    }
+    25% {
+        transform: rotate(3turn);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(4turn);
+        opacity: 1;
+    }
+    75% {
+        transform: rotate(-3turn);
+        opacity: 0.5;
+    }
+    90% {
+        transform: rotate(-2turn);
+        opacity: 0.2;
+    }
+    100% {
+        transform: rotate(-1turn);
+        opacity: 0;
+    }
+}
+@keyframes loader--appears {
+ 0%, 60% {
+    opacity : 1;
+    transform: translateX(0px);
+ }
+ 99% {
+     opacity: 1;
+     transform: translateX(0px);
+ }
+
+ 100% {
+    opacity : 0;
+    transform: translateX(9999px);
+ }
 }
 
 /* Page d'Accueil + Page Menus : Animation coeur*/
-
 @keyframes loveit--full {
     0% {
         opacity: 0;
@@ -68,7 +114,6 @@ $breakpoints: (mobile : 768px, tablette : 992px);
         transform: rotate(0deg);
     }
 }
-
 @keyframes loveit--empty {
     0% {
         opacity: 1;
@@ -79,7 +124,6 @@ $breakpoints: (mobile : 768px, tablette : 992px);
 }
 
 /* Page Menus : Animation du menu*/
-
 @keyframes appears {
     0% {
         opacity: 0;
@@ -90,22 +134,7 @@ $breakpoints: (mobile : 768px, tablette : 992px);
         transform : translateY(0px);
     }
 }
-.menu__choix:nth-child(2) {
-    animation : appears $duree_appears ease-in 100ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(3) {
-    animation : appears $duree_appears ease-in 200ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(4) {
-    animation : appears $duree_appears ease-in 300ms;
-    animation-fill-mode: backwards;
-}
-.menu__choix:nth-child(5) {
-    animation : appears $duree_appears ease-in 400ms;
-    animation-fill-mode: backwards;
-}
+
 
 /* --------------------------------------------------- Code --------------------------------------------- */
 
@@ -129,12 +158,12 @@ button {
     background: linear-gradient($color2, $color1);
     color: white;
     border: transparent;
-    box-shadow: 0px 5px 8px lightgrey;
+    @include ombre-regular ;
     font-family: 'Roboto';
     font-size: 1em;
     &:hover {
         cursor: pointer;
-        box-shadow: 5px 5px 10px darken($color: lightgrey, $amount: 10);
+        @include ombre-hover ;
     }
 }
 
@@ -165,48 +194,7 @@ p, a {
     font-size : 1em;
 }
 
-@keyframes loader--rolling {
-    0% {
-        transform: rotate(2turn);
-        opacity: 1;
-    }
-    25% {
-        transform: rotate(3turn);
-        opacity: 1;
-    }
-    50% {
-        transform: rotate(4turn);
-        opacity: 1;
-    }
-    75% {
-        transform: rotate(-3turn);
-        opacity: 0.5;
-    }
-    90% {
-        transform: rotate(-2turn);
-        opacity: 0.2;
-    }
-    100% {
-        transform: rotate(-1turn);
-        opacity: 0;
-    }
-}
 
-@keyframes loader--appears {
- 0%, 60% {
-    opacity : 1;
-    transform: translateX(0px);
- }
- 99% {
-     opacity: 1;
-     transform: translateX(0px);
- }
-
- 100% {
-    opacity : 0;
-    transform: translateX(9999px);
- }
-}
 
 .pageloader {
     background-color:$backgroundlight;
@@ -298,11 +286,11 @@ header {
             justify-content: flex-start;
             align-items: center;
             border-radius: 20px;
-            box-shadow: 3px 3px 10px lightgrey;
+            @include ombre-regular ;
             &:hover { /* Modification effet de survol des boutons centraux*/
                 cursor : pointer;
                 background-color: lighten($color1, $amount: 35);
-                box-shadow: 5px 5px 10px darken($color: lightgrey, $amount: 10);
+                @include ombre-hover ;
                 & > .fas {
                 color : $color1;
                 }
@@ -366,12 +354,15 @@ header {
             border-radius: 20px;
             width: 100%;
             height: 200px;
-            box-shadow: 5px 5px 8px lightgrey;
+            @include ombre-regular;
             position : relative;
             margin-bottom : 20px;
             z-index: 0;
+            transform: scale(1);
+            transition : 300ms ease;
             &:hover {
-                box-shadow: 5px 5px 8px darken(lightgrey, 10);
+                @include ombre-hover;
+                transform: scale(1.01);
             }
             &__bandeau {
                 height : 30%;
@@ -574,6 +565,7 @@ footer {
             transform-origin: bottom;
         }
         &:hover {
+            cursor: pointer;
             & .page_menus__coeur_restaurant--vide {
                 animation: loveit--empty 300ms linear 100ms forwards;
             }
@@ -625,11 +617,11 @@ footer {
         margin-bottom : 15px;
         background-color: white;
         padding-left: 15px;
-        box-shadow : 0px 5px 10px lightgrey;
+        @include ombre-regular;
         overflow: hidden;
         &:hover { /*effet au survol du plat > coche verte sur la droite*/
             cursor: pointer;
-            box-shadow : 0px 5px 20px lightgrey;
+            @include ombre-hover();
             & .menu__prix_et_choix--check {
                 width : 80px;
                 transition-duration: 500ms;
@@ -694,7 +686,7 @@ footer {
             padding : 0px 0px 30px 0px; 
         }
         &:hover + button {
-            box-shadow : 0px 5px 20px lightgrey;
+            @include ombre-hover;
         }
         .btn--commander {
             width: 50%;
@@ -706,5 +698,22 @@ footer {
             }
         }
     }
+}
+
+.menu__choix:nth-child(2) {
+    animation : appears $duree_appears ease-in 100ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(3) {
+    animation : appears $duree_appears ease-in 200ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(4) {
+    animation : appears $duree_appears ease-in 300ms;
+    animation-fill-mode: backwards;
+}
+.menu__choix:nth-child(5) {
+    animation : appears $duree_appears ease-in 400ms;
+    animation-fill-mode: backwards;
 }
 

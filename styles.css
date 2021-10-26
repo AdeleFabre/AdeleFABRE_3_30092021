@@ -5,7 +5,50 @@
   padding: 30px 20px 30px 20px;
 }
 
-/* MIXINS, KEYFRAMES */
+/* --------------- MIXINS, KEYFRAMES --------------- */
+/* Ombres */
+/* Versions Responsive Tablette & Desktop */
+/* Page d'accueil : loader */
+@keyframes loader--rolling {
+  0% {
+    transform: rotate(2turn);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(3turn);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(4turn);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(-3turn);
+    opacity: 0.5;
+  }
+  90% {
+    transform: rotate(-2turn);
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(-1turn);
+    opacity: 0;
+  }
+}
+@keyframes loader--appears {
+  0%, 60% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  99% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(9999px);
+  }
+}
 /* Page d'Accueil + Page Menus : Animation coeur*/
 @keyframes loveit--full {
   0% {
@@ -56,26 +99,6 @@
     transform: translateY(0px);
   }
 }
-.menu__choix:nth-child(2) {
-  animation: appears 400ms ease-in 100ms;
-  animation-fill-mode: backwards;
-}
-
-.menu__choix:nth-child(3) {
-  animation: appears 400ms ease-in 200ms;
-  animation-fill-mode: backwards;
-}
-
-.menu__choix:nth-child(4) {
-  animation: appears 400ms ease-in 300ms;
-  animation-fill-mode: backwards;
-}
-
-.menu__choix:nth-child(5) {
-  animation: appears 400ms ease-in 400ms;
-  animation-fill-mode: backwards;
-}
-
 /* --------------------------------------------------- Code --------------------------------------------- */
 * {
   box-sizing: border-box;
@@ -103,7 +126,7 @@ button {
 }
 button:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 10px #bababa;
+  box-shadow: 0px 5px 8px #adadad;
 }
 
 h1 {
@@ -133,46 +156,6 @@ p, a {
   font-size: 1em;
 }
 
-@keyframes loader--rolling {
-  0% {
-    transform: rotate(2turn);
-    opacity: 1;
-  }
-  25% {
-    transform: rotate(3turn);
-    opacity: 1;
-  }
-  50% {
-    transform: rotate(4turn);
-    opacity: 1;
-  }
-  75% {
-    transform: rotate(-3turn);
-    opacity: 0.5;
-  }
-  90% {
-    transform: rotate(-2turn);
-    opacity: 0.2;
-  }
-  100% {
-    transform: rotate(-1turn);
-    opacity: 0;
-  }
-}
-@keyframes loader--appears {
-  0%, 60% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  99% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(9999px);
-  }
-}
 .pageloader {
   background-color: #F6F6F6;
   margin: 0px;
@@ -262,13 +245,13 @@ header .header__arrow {
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
-  box-shadow: 3px 3px 10px lightgrey;
+  box-shadow: 0px 5px 8px lightgrey;
 }
 .fonctionnement__etape:hover {
   /* Modification effet de survol des boutons centraux*/
   cursor: pointer;
   background-color: #f2eafb;
-  box-shadow: 5px 5px 10px #bababa;
+  box-shadow: 0px 5px 8px #adadad;
 }
 .fonctionnement__etape:hover > .fas {
   color: #9356DC;
@@ -336,13 +319,16 @@ header .header__arrow {
   border-radius: 20px;
   width: 100%;
   height: 200px;
-  box-shadow: 5px 5px 8px lightgrey;
+  box-shadow: 0px 5px 8px lightgrey;
   position: relative;
   margin-bottom: 20px;
   z-index: 0;
+  transform: scale(1);
+  transition: 300ms ease;
 }
 .restaurants .restau:hover {
-  box-shadow: 5px 5px 8px #bababa;
+  box-shadow: 0px 5px 8px #adadad;
+  transform: scale(1.01);
 }
 .restaurants .restau__bandeau {
   height: 30%;
@@ -550,6 +536,9 @@ footer .footer__link4 {
   -webkit-background-clip: text;
   transform-origin: bottom;
 }
+.page_menus__coeur_restaurant:hover {
+  cursor: pointer;
+}
 .page_menus__coeur_restaurant:hover .page_menus__coeur_restaurant--vide {
   animation: loveit--empty 300ms linear 100ms forwards;
 }
@@ -598,7 +587,7 @@ footer .footer__link4 {
   margin-bottom: 15px;
   background-color: white;
   padding-left: 15px;
-  box-shadow: 0px 5px 10px lightgrey;
+  box-shadow: 0px 5px 8px lightgrey;
   overflow: hidden;
 }
 @media screen and (min-width: 992px) {
@@ -609,7 +598,7 @@ footer .footer__link4 {
 .menu__choix:hover {
   /*effet au survol du plat > coche verte sur la droite*/
   cursor: pointer;
-  box-shadow: 0px 5px 20px lightgrey;
+  box-shadow: 0px 5px 8px #adadad;
 }
 .menu__choix:hover .menu__prix_et_choix--check {
   width: 80px;
@@ -679,7 +668,7 @@ footer .footer__link4 {
   }
 }
 .menu__commande:hover + button {
-  box-shadow: 0px 5px 20px lightgrey;
+  box-shadow: 0px 5px 8px #adadad;
 }
 .menu__commande .btn--commander {
   width: 50%;
@@ -693,6 +682,26 @@ footer .footer__link4 {
   .menu__commande .btn--commander {
     width: 25%;
   }
+}
+
+.menu__choix:nth-child(2) {
+  animation: appears 400ms ease-in 100ms;
+  animation-fill-mode: backwards;
+}
+
+.menu__choix:nth-child(3) {
+  animation: appears 400ms ease-in 200ms;
+  animation-fill-mode: backwards;
+}
+
+.menu__choix:nth-child(4) {
+  animation: appears 400ms ease-in 300ms;
+  animation-fill-mode: backwards;
+}
+
+.menu__choix:nth-child(5) {
+  animation: appears 400ms ease-in 400ms;
+  animation-fill-mode: backwards;
 }
 
 /*# sourceMappingURL=styles.css.map */
