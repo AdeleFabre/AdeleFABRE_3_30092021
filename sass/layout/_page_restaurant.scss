@@ -114,7 +114,7 @@
         }
         
     }
-    &__choix { /*Style pour chaque choix de plat*/
+    &__choix { /*Style pour chaque plat + effet survol*/
         @include desktop-only {
             width: 98%;
         }
@@ -131,14 +131,15 @@
             @include ombre-hover();
             & .menu__prix_et_choix--check {
                 width : 80px;
-                transition-duration: 500ms;
+                transition-duration: 300ms;
+                transition-timing-function: ease-in;
             }
             & .fa-check-circle {
                 transform: rotate(1turn);
             }
         }
     }
-    &__texte { /* = menu_choix_liste*/
+    &__texte { 
         white-space: nowrap;
         overflow: hidden;
         &--nom {
@@ -159,7 +160,7 @@
             font-size: 0.9em;
         }
     }
-    &__prix_et_choix { /* = menu_choix_complement*/
+    &__prix_et_choix { 
         display: flex;
 
         &--prix {
@@ -206,6 +207,7 @@
         }
     }
 }
+
 .menu__choix:nth-child(2) {
     animation : appears $duree_appears ease-in 100ms;
     animation-fill-mode: backwards;

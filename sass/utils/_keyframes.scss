@@ -5,27 +5,27 @@
 /* Page d'accueil : loader */
 @keyframes loader--rolling {
     0% {
-        transform: rotate(2turn);
+        transform: rotate(1turn);
         opacity: 1;
     }
     25% {
-        transform: rotate(3turn);
+        transform: rotate(2turn);
         opacity: 1;
     }
     50% {
-        transform: rotate(4turn);
+        transform: rotate(3turn);
         opacity: 1;
     }
     75% {
-        transform: rotate(-3turn);
+        transform: rotate(4turn);
         opacity: 0.5;
     }
     90% {
-        transform: rotate(-2turn);
+        transform: rotate(-3turn);
         opacity: 0.2;
     }
     100% {
-        transform: rotate(-1turn);
+        transform: rotate(-2turn);
         opacity: 0;
     }
 }
@@ -43,6 +43,35 @@
     opacity : 0;
     transform: translateX(9999px);
  }
+}
+@keyframes loader--rolls {
+    0%     {
+        transform: translateX(-1000px) scaleY(0.8) scaleX(1.2);
+    }
+    10% {
+        transform: translateX(2px) scaleY(1.3) scaleX(0.7);
+    }
+    20% {
+        transform: translateX(-20px);
+    }
+    30% {
+        transform: translateX(18px);
+    }
+    50% {
+        transform: translateX(-11px);
+    }
+    70% {
+        transform: translateX(9px);
+    }
+
+    90% {
+        transform-origin: left;
+        transform: translateX(-45px) scaleY(1.3) scaleX(0.7);
+    }
+
+    100% {
+        transform: translateX(1000px) scaleY(0.7) scaleX(1.3);
+    }
 }
 
 /* Page d'Accueil + Page Menus : Animation coeur*/

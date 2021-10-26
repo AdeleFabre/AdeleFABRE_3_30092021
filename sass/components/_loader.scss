@@ -14,6 +14,18 @@
     transform: translateX(-9999px);
     animation: loader--appears 2800ms ease-out;
     &__loader {
+        /*
+        border : 5px solid $color1;
+        border-radius: $loadersize;
+        background-color: $color1;
+        margin : auto;
+        position: absolute;
+        transform: translateX(-1000px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        animation : loader--rolls 2500ms linear forwards;*/
         height: $loadersize;
         width: $loadersize;
         border-top: 5px solid $color1;
@@ -28,6 +40,6 @@
         right: 0;
         bottom: 0;
         top: 0;
-        animation: loader--rolling 2500ms linear 100ms;
+        animation: loader--rolling 2500ms linear forwards 200ms;
     }
 }

@@ -11,27 +11,27 @@
 /* Page d'accueil : loader */
 @keyframes loader--rolling {
   0% {
-    transform: rotate(2turn);
+    transform: rotate(1turn);
     opacity: 1;
   }
   25% {
-    transform: rotate(3turn);
+    transform: rotate(2turn);
     opacity: 1;
   }
   50% {
-    transform: rotate(4turn);
+    transform: rotate(3turn);
     opacity: 1;
   }
   75% {
-    transform: rotate(-3turn);
+    transform: rotate(4turn);
     opacity: 0.5;
   }
   90% {
-    transform: rotate(-2turn);
+    transform: rotate(-3turn);
     opacity: 0.2;
   }
   100% {
-    transform: rotate(-1turn);
+    transform: rotate(-2turn);
     opacity: 0;
   }
 }
@@ -47,6 +47,33 @@
   100% {
     opacity: 0;
     transform: translateX(9999px);
+  }
+}
+@keyframes loader--rolls {
+  0% {
+    transform: translateX(-1000px) scaleY(0.8) scaleX(1.2);
+  }
+  10% {
+    transform: translateX(2px) scaleY(1.3) scaleX(0.7);
+  }
+  20% {
+    transform: translateX(-20px);
+  }
+  30% {
+    transform: translateX(18px);
+  }
+  50% {
+    transform: translateX(-11px);
+  }
+  70% {
+    transform: translateX(9px);
+  }
+  90% {
+    transform-origin: left;
+    transform: translateX(-45px) scaleY(1.3) scaleX(0.7);
+  }
+  100% {
+    transform: translateX(1000px) scaleY(0.7) scaleX(1.3);
   }
 }
 /* Page d'Accueil + Page Menus : Animation coeur*/
@@ -179,6 +206,18 @@ p, a {
   animation: loader--appears 2800ms ease-out;
 }
 .pageloader__loader {
+  /*
+  border : 5px solid $color1;
+  border-radius: $loadersize;
+  background-color: $color1;
+  margin : auto;
+  position: absolute;
+  transform: translateX(-1000px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  animation : loader--rolls 2500ms linear forwards;*/
   height: 60px;
   width: 60px;
   border-top: 5px solid #9356DC;
@@ -193,7 +232,7 @@ p, a {
   right: 0;
   bottom: 0;
   top: 0;
-  animation: loader--rolling 2500ms linear 100ms;
+  animation: loader--rolling 2500ms linear forwards 200ms;
 }
 
 /* LAYOUT */
@@ -258,7 +297,17 @@ footer .footer__link4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fonctionnement__container {
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement__container {
+    align-items: center;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .fonctionnement h2 {
@@ -273,15 +322,24 @@ footer .footer__link4 {
   }
 }
 .fonctionnement__etape {
-  width: 90%;
-  max-width: 350px;
+  width: 98%;
   background-color: #F6F6F6;
-  margin: 0px 0px 30px 20px;
+  margin: 0px 0px 30px 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
   box-shadow: 0px 5px 8px lightgrey;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fonctionnement__etape {
+    max-width: 350px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement__etape {
+    max-width: 350px;
+  }
 }
 .fonctionnement__etape:hover {
   /* Modification effet de survol des boutons centraux*/
@@ -307,6 +365,7 @@ footer .footer__link4 {
   color: grey;
   padding: 0px 30px 0px 20px;
   font-size: 1.2em;
+  width: 70px;
 }
 .fonctionnement__etape p {
   font-weight: bold;
@@ -322,7 +381,17 @@ footer .footer__link4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fonctionnement__container {
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement__container {
+    align-items: center;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .fonctionnement h2 {
@@ -337,15 +406,24 @@ footer .footer__link4 {
   }
 }
 .fonctionnement__etape {
-  width: 90%;
-  max-width: 350px;
+  width: 98%;
   background-color: #F6F6F6;
-  margin: 0px 0px 30px 20px;
+  margin: 0px 0px 30px 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-radius: 20px;
   box-shadow: 0px 5px 8px lightgrey;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fonctionnement__etape {
+    max-width: 350px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement__etape {
+    max-width: 350px;
+  }
 }
 .fonctionnement__etape:hover {
   /* Modification effet de survol des boutons centraux*/
@@ -371,6 +449,7 @@ footer .footer__link4 {
   color: grey;
   padding: 0px 30px 0px 20px;
   font-size: 1.2em;
+  width: 70px;
 }
 .fonctionnement__etape p {
   font-weight: bold;
@@ -431,13 +510,13 @@ footer .footer__link4 {
   transform: scale(1.01);
 }
 .restaurants .restau__bandeau {
-  height: 30%;
+  height: 35%;
   width: 100%;
   position: absolute;
   bottom: -1px;
   background: white;
   border-radius: 0px 0px 20px 20px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -645,7 +724,7 @@ footer .footer__link4 {
   }
 }
 .menu__choix {
-  /*Style pour chaque choix de plat*/
+  /*Style pour chaque plat + effet survol*/
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
@@ -667,13 +746,13 @@ footer .footer__link4 {
 }
 .menu__choix:hover .menu__prix_et_choix--check {
   width: 80px;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .menu__choix:hover .fa-check-circle {
   transform: rotate(1turn);
 }
 .menu__texte {
-  /* = menu_choix_liste*/
   white-space: nowrap;
   overflow: hidden;
 }
@@ -695,7 +774,6 @@ footer .footer__link4 {
   font-size: 0.9em;
 }
 .menu__prix_et_choix {
-  /* = menu_choix_complement*/
   display: flex;
 }
 .menu__prix_et_choix--prix {
