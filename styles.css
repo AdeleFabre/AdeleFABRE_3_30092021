@@ -176,7 +176,7 @@ h4 {
 
 p, a {
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 header {
@@ -224,6 +224,7 @@ header .header__arrow {
 }*/
 .localisation {
   background-color: #EAEAEA;
+  box-shadow: inset 0px 10px 5px -5px #d4d4d4;
 }
 .localisation__name {
   display: flex;
@@ -239,8 +240,27 @@ header .header__arrow {
   text-align: center;
 }
 
+.fonctionnement__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .fonctionnement h2 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonctionnement h2 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
 .fonctionnement__etape {
   width: 90%;
+  max-width: 350px;
   background-color: #F6F6F6;
   margin: 0px 0px 30px 20px;
   display: flex;
@@ -271,14 +291,28 @@ header .header__arrow {
 }
 .fonctionnement__etape .fas {
   color: grey;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 30px 0px 20px;
+  font-size: 1.2em;
 }
 .fonctionnement__etape p {
   font-weight: bold;
+  font-size: 1em;
 }
 
 .restaurants {
   background-color: #F6F6F6;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .restaurants h2 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants h2 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
 }
 .restaurants__box {
   display: flex;
@@ -289,8 +323,7 @@ header .header__arrow {
 @media screen and (min-width: 992px) {
   .restaurants__box {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 24% 24% 24% 24%;
     gap: 20px;
     margin-right: 20px;
   }
@@ -308,10 +341,13 @@ header .header__arrow {
   border-radius: 20px;
   width: 100%;
   height: 200px;
-  box-shadow: 5px 5px 4px lightgrey;
+  box-shadow: 5px 5px 8px lightgrey;
   position: relative;
   margin-bottom: 20px;
   z-index: 0;
+}
+.restaurants .restau:hover {
+  box-shadow: 5px 5px 8px #bababa;
 }
 .restaurants .restau__bandeau {
   height: 30%;
@@ -387,7 +423,7 @@ header .header__arrow {
 }
 .restau__coeur--plein {
   position: relative;
-  right: 20px;
+  right: 22px;
   font-size: 1.2em;
   opacity: 0;
   color: transparent;
