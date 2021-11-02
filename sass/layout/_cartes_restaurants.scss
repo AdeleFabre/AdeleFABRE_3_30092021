@@ -31,9 +31,9 @@
             }
         }
         .restau {
-            border-radius: 20px;
+            border-radius: 15px;
             width: 100%;
-            height: 200px;
+            height: 250px;
             @include ombre-regular;
             position : relative;
             margin-bottom : 20px;
@@ -45,12 +45,12 @@
                 transform: scale(1.01);
             }
             &__bandeau {
-                height : 35%;
+                height : 30%;
                 width : 100%;
                 position : absolute;
                 bottom : -1px;
                 background : white;
-                border-radius: 0px 0px 20px 20px;
+                border-radius: 0px 0px 15px 15px;
                 padding : 15px;
                 display : flex;
                 justify-content: space-between;
@@ -68,7 +68,8 @@
                 p {
                     margin : 0px;
                     padding : 5px 1px 5px 1px;
-                    font-weight: bold;
+                    font-weight: 700;
+                    font-size: 0.9em;
                 }
             }
 
@@ -96,15 +97,22 @@
     justify-content: space-between;
     align-items: flex-start;
     .restau__nom {
-        font-weight: bolder;
+        font-weight: 900;
+        font-size: 1.1em;
         margin : 0px 0px 5px 0px;
     }
     .restau__quartier {
         margin : 0px;
+        font-size: 1.1em;
+        font-weight: 300;
     }
 }
 .restau__coeur{
     z-index: 100;
+    width: 15%;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
     &:hover {
         .restau__coeur--vide {
             animation: loveit--empty 300ms linear 100ms forwards;
@@ -114,14 +122,17 @@
         }
     }
     &--vide {
+        position: relative;
+        left : 25%;
         color: $footer-color;
         opacity: 1;  
-        font-size: 1.2em;     
+        font-size: 1.4em;
+        font-weight: lighter;  
     }
     &--plein { 
-        position : relative;
-        right : 22px;
-        font-size: 1.2em;
+        position: relative;
+        right : 25%;
+        font-size: 1.4em;
         opacity : 0;
         color: transparent;
         background: linear-gradient(to top, $color1, $color2);

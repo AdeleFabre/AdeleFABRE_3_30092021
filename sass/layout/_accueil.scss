@@ -2,5 +2,13 @@
     background-color: $backgroundlight;
     @extend %padding-defaut;
     text-align: center;
+    &__texte p {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+}
+
+.btn--explo {
+    box-shadow: 0px 5px 8px darken($shadowbase, 10);
 }
 
